@@ -1,6 +1,6 @@
 
 /**
- * La gestion des events du DOM ne se fait que sur des élement du DOM
+ * La gestion des events du DOM ne se fait QUE sur des élement du DOM
  * Cette gestion se fait pvia l'appel fonctions lorsqu'un événement se produit.
  * Ces fonctions sont appelées des gestionnaires d'événements.
  * Une convention est de les préfixer de "handle" suivi du nom de l'événement.
@@ -16,6 +16,7 @@ function Events(){
     const handleClick = (event) => {
         console.log('Button clicked', event);
     }
+
     return(
         <>
             <Component onClick={handleClick}></Component>
