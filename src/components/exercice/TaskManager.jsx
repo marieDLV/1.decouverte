@@ -5,6 +5,9 @@ import { useState } from "react";
 // React.useState
 // const {useState} = React;
 
+/**
+ * Formulaire de saisie de tâche
+ */
 function TaskForm(props) {
 
     // Destructuration des props
@@ -26,6 +29,9 @@ function TaskForm(props) {
 }
 
 // Destructuration des props
+/**
+ * Composant d'affichage de la liste des tâches
+ */
 function TaskList( { tasks, handleDeleteTask } ) {
 
     return (
@@ -53,7 +59,12 @@ function TaskList( { tasks, handleDeleteTask } ) {
     )
 }
 
-function TaskManager() {
+/**
+ * Custom Hook - Bonne pratique de refactorisation pour concenter une logique d'état
+ * Convention de nommage: useXXX (pour indiquer qu'il s'agit d'un hook de composant fonctionnel)
+ */
+
+function useTaskLogic() {
 
     const [tasks, setTasks] = useState([]);
     const [taskDescrition, setTaskDescription] = useState("");
@@ -77,6 +88,27 @@ function TaskManager() {
         if (!task) return;
         setTasks(tasks.filter(t => t !== task));
     }
+
+    return {
+        tasks,
+        taskDescrition,
+        errorMessage,
+        handleTaskDescriptionChange,
+        handleAddTask,
+        handleDeleteTask
+    }
+}
+
+function TaskManager() {
+
+    const { 
+        tasks, 
+        taskDescrition, 
+        errorMessage, 
+        handleTaskDescriptionChange,
+        handleAddTask,
+        handleDeleteTask
+        } = useTaskLogic();
 
     return (
         <fieldset>
