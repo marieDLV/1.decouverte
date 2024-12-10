@@ -1,7 +1,13 @@
+// Destructuration à l'import
 import { useState } from "react";
+
+// import React from 'react'; // Tout l'export par deéafaut que je renomme React
+// React.useState
+// const {useState} = React;
 
 function TaskForm(props) {
 
+    // Destructuration des props
     const { taskDescrition, handleTaskDescriptionChange, errorMessage, handleAddTask } = props;
 
     return (
@@ -19,9 +25,8 @@ function TaskForm(props) {
     )
 }
 
-function TaskList(props) {
-
-    const { tasks, handleDeleteTask } = props;
+// Destructuration des props
+function TaskList( { tasks, handleDeleteTask } ) {
 
     return (
         !tasks.length
@@ -76,6 +81,7 @@ function TaskManager() {
     return (
         <fieldset>
             <legend>Task Manager</legend>
+
             <TaskForm
                 taskDescrition={taskDescrition}
                 handleTaskDescriptionChange={handleTaskDescriptionChange}
@@ -84,7 +90,9 @@ function TaskManager() {
                 />
 
             <hr />
+
             <TaskList tasks={tasks} handleDeleteTask={handleDeleteTask} />
+
         </fieldset>
     )
 }
