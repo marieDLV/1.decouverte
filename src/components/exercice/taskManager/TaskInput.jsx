@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 /**
  * Composant permettant de saisir une tâche
  * "TaskInput" est un composant qui prend 4 props:
