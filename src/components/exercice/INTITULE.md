@@ -20,7 +20,7 @@ Sinon, affichez la liste des tâches.
 
 ### Rendu par boucle :
 
-Affichez chaque tâche sous forme d’une liste ordonnée (<ol>).
+Affichez chaque tâche sous forme d’une liste ordonnée ("ol").
 Chaque tâche doit inclure un bouton "Supprimer" à côté.
 
 ### Programmation d’événements :
