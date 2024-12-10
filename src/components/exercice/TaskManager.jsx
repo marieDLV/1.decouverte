@@ -23,13 +23,26 @@ function TaskManager(){
             <input placeholder="Texte de la tâche" onChange={handleTaskDescriptionChange}/>
             <button onClick={handleAddTask}>Ajouter une tâche</button>
             <hr/>
-            <p>Aucune tâche pour le moment.</p>
-            <ol>
-                <li>
-                    <span>Tâche 1</span>
-                    <button>Supprimer</button>
-                </li>
-            </ol>
+            {
+              !tasks.length
+              ?
+              (<p>Aucune tâche pour le moment.</p>)
+              : 
+              (
+                <ol>
+                    {
+                        tasks.map((task, index) => {
+                            return (
+                                <li key={index}>
+                                    <span>{task}</span>
+                                    <button>Supprimer</button>
+                                </li>
+                            )
+                        })
+                    }
+                </ol>
+              )
+            }
         </fieldset>
     )
 }
