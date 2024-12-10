@@ -1,17 +1,22 @@
+import { useState } from "react";
+
 function Parent(){
+    const [text,setText] = useState("");
+    
     return(
         <>
-            <Child></Child>
-            <Child></Child>
-            <Child></Child>
+            <Child value={text} onChange={e => setText(e.target.value)}></Child>
+            <code>{text}</code>
         </>
     )
 }
 
-function Child(){
+function Child(props){
+    
     return(
         <>
             I am child !
+            <input value={props.value} onChange={props.onChange} />
         </>
     )
 }
