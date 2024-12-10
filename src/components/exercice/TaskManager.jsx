@@ -16,6 +16,11 @@ function TaskManager(){
         setTaskDescrition("");
     }
 
+    const handleDeleteTask = ( task ) => {
+        if(!task) return;
+        setTasks(tasks.filter( t => t !== task ));
+    }
+
 
     return (
         <fieldset>
@@ -35,7 +40,7 @@ function TaskManager(){
                             return (
                                 <li key={index}>
                                     <span>{task}</span>
-                                    <button>Supprimer</button>
+                                    <button onClick={() => handleDeleteTask(task)}>Supprimer</button>
                                 </li>
                             )
                         })
