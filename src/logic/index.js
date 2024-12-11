@@ -70,9 +70,18 @@ export function useUsersApi() {
     const [history, setHistory] = useState([]);
 
     const getAllUsers = async () => {
+        const response = await axios.get(RESOURCE_USERS);
+        setUsers(response.data);
+        setHistory(response.data);
     }
 
     const searchUsers = (searchName) => {
+        if(!searchName) {
+            setUsers(history);
+            return;
+        }
+        const filteredUsers = history.filter( user => user.name.toLowerCase().includes(searchName.toLowerCase()) );
+        setUsers(filteredUsers);
     }
 
     return {
