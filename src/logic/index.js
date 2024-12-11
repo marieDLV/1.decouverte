@@ -34,8 +34,16 @@ export function useMessagesApi(){
 
     const [messages, setMessages] = useState([]);
 
+    const getAllMessages = async () => {
+    }
+
+    const sendMessage = async (message) => {
+    }
+
     return {
-        messages
+        messages,
+        getAllMessages,
+        sendMessage
     }
 
 }
@@ -43,9 +51,18 @@ export function useMessagesApi(){
 export function useUsersApi(){
 
     const [users, setUsers] = useState([]);
+    
+
+    const getAllUsers = async () => {
+    }
+
+    const searchUsers = (searchName) => {
+    }
 
     return {
-        users
+        users,
+        getAllUsers,
+        searchUsers
     }
     
 }
