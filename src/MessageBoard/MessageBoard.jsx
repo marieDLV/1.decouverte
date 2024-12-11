@@ -1,4 +1,3 @@
-import Container from "./Container";
 import Inbox from "./Inbox";
 import Messages from "./Messages";
 import Messaging from "./Messaging";
@@ -23,12 +22,10 @@ function MessageBoard() {
     };
 
     return (
-        <Container>
-            <Messaging>
-                <Inbox conversations={conversations} />
-                <Messages messages={messages} onSendMessage={handleSendMessage} />
-            </Messaging>
-        </Container>
+        <Messaging>
+            <Inbox conversations={conversations} />
+            <Messages messages={messages} onSendMessage={handleSendMessage} />
+        </Messaging>
     );
 }
 export default MessageBoard;
