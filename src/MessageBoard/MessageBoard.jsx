@@ -7,6 +7,8 @@ import "./_maquette/style.css";
 
 // MessageBoard.jsx
 function MessageBoard() {
+
+    // Implémentation provisoire des données. A remplacer par des appels API.
     const conversations = [
         { id: 1, name: "Sunil Rajput", date: "Dec 25", preview: "Test, which is a new approach...", profileImage: "https://ptetutorials.com/images/user-profile.png" },
         // autres conversations
