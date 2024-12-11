@@ -29,6 +29,9 @@ const URL = 'http://localhost:5050/messages'
  * "searchUsers" => Array<User>
  */
 
+const ENDPOINT = 'http://localhost:5050';
+const RESOURCE_MESSAGES = `${ENDPOINT}/messages`;
+const RESOURCE_USERS = `${ENDPOINT}/users`;
 
 export function useMessagesApi(){
 
