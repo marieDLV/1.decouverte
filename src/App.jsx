@@ -3,6 +3,8 @@ import Footer from './components/Footer'
 import TaskManager from './components/exercice/TaskManager'
 import TaskManagerCorrection from './components/exercice/taskManager/correction'
 
+import './logic'
+
 function App() {
 
   return (
