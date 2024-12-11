@@ -3,12 +3,14 @@ import Footer from "./components/Footer"
 import TaskManager from "./components/exercice/TaskManager"
 
 import './logic'
+import MessageBoard from "./MessageBoard/MessageBoard"
 
 function App() {
   return (
     <>
       <Header/>
-      <TaskManager/>
+      <MessageBoard/>
+      {/* <TaskManager/> */}
       {/* <TheoryWrapper/> */}
       <Footer/>
     </>

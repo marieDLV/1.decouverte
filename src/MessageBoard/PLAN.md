@@ -1,15 +1,16 @@
 # Strucutre de composants
 
 ## Hiérarchie des composants
-* Container
-    * Messaging
-        * Inbox
-            * SearchBar
-            * ChatList (itéré pour chaque conversation)
-    * Messages
-        * MessageHistory
-            * Message (itéré pour chaque message)
-        * MessageInput
+* MeesageBoard
+  * Container
+      * Messaging
+          * Inbox
+              * SearchBar
+              * ChatList (itéré pour chaque conversation)
+      * Messages
+          * MessageHistory
+              * Message (itéré pour chaque message)
+          * MessageInput
 
 ```jsx
 

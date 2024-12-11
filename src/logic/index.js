@@ -32,7 +32,6 @@ const ENDPOINT = 'http://localhost:5050';
 const RESOURCE_MESSAGES = `${ENDPOINT}/messages`;
 const RESOURCE_USERS = `${ENDPOINT}/users`;
 
-
 export function useMessagesApi() {
 
     const [messages, setMessages] = useState([]);
