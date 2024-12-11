@@ -37,7 +37,8 @@ export function useMessagesApi(){
 
     const [messages, setMessages] = useState([]);
 
-    const getAllMessages = async () => {
+    const getAllMessages = () => {
+        axios.get(RESOURCE_MESSAGES).then( response => setMessages(response.data) )
     }
 
     const sendMessage = async (message) => {
