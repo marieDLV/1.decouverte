@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "mock:api": "json-server --watch ./api/data.json --port 5050",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
