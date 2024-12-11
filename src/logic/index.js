@@ -39,11 +39,16 @@ export function useMessagesApi(){
 
     const [messages, setMessages] = useState([]);
 
-    const getAllMessages = () => {
+    const getAllMessages = async () => {
         // Promise sans async
-        const promise = axios.get(RESOURCE_MESSAGES)
+        /* const promise = axios.get(RESOURCE_MESSAGES)
         promise.then( response => setMessages(response.data) )
-               .catch( error => console.error(error) );
+               .catch( error => console.error(error) ); 
+        */
+       // le "drapeau" async permet d'utiliser le mot clé await
+       
+       const response = await axios.get(RESOURCE_MESSAGES);
+       setMessages(response.data);
     }
 
     const sendMessage = async (message) => {
