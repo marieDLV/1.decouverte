@@ -1,8 +1,7 @@
 import axios from 'axios'
 import { useState } from 'react';
 
-const URL = 'http://localhost:5050/messages'
-
+// const URL = 'http://localhost:5050/messages'
 // axios.get(URL).then( response => console.table(response.data) );
 
 
@@ -35,23 +34,26 @@ const RESOURCE_USERS = `${ENDPOINT}/users`;
 
 
 
-export function useMessagesApi(){
+export function useMessagesApi() {
 
     const [messages, setMessages] = useState([]);
 
     const getAllMessages = async () => {
         // Promise sans async
         /* const promise = axios.get(RESOURCE_MESSAGES)
-        promise.then( response => setMessages(response.data) )
-               .catch( error => console.error(error) ); 
+                 promise.then( response => setMessages(response.data) )
+                        .catch( error => console.error(error) ); 
         */
-       // le "drapeau" async permet d'utiliser le mot clé await
-       
-       const response = await axios.get(RESOURCE_MESSAGES);
-       setMessages(response.data);
+
+        // le "drapeau" async permet d'utiliser le mot clé await   
+        const response = await axios.get(RESOURCE_MESSAGES);
+        setMessages(response.data);
     }
 
     const sendMessage = async (message) => {
+        if(!message) return;
+        const response = await axios.post(RESOURCE_MESSAGES, {text:message});
+        setMessages([...messages,response.data]);
     }
 
     return {
@@ -62,7 +64,7 @@ export function useMessagesApi(){
 
 }
 
-export function useUsersApi(){
+export function useUsersApi() {
 
     const [users, setUsers] = useState([]);
     const [history, setHistory] = useState([]);
@@ -78,5 +80,5 @@ export function useUsersApi(){
         getAllUsers,
         searchUsers
     }
-    
+
 }
