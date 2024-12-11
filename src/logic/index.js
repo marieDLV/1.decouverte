@@ -1,12 +1,14 @@
 import axios from 'axios'
+import { useState } from 'react';
 
 const URL = 'http://localhost:5050/messages'
 
-axios.get(URL).then( response => console.table(response.data) );
+// axios.get(URL).then( response => console.table(response.data) );
 
 
 /**
  * Besoin de consommation API
+ * 
  * - Lire la liste des "messages" depuis l'API
  * - Lire la liste des "users" depuis l'API
  * - Envoyer un message pour création vers l'API
@@ -26,3 +28,24 @@ axios.get(URL).then( response => console.table(response.data) );
  * "getAllUsers" => Promise<Array<User>>
  * "searchUsers" => Array<User>
  */
+
+
+export function useMessagesApi(){
+
+    const [messages, setMessages] = useState([]);
+
+    return {
+        messages
+    }
+
+}
+
+export function useUsersApi(){
+
+    const [users, setUsers] = useState([]);
+
+    return {
+        users
+    }
+    
+}
