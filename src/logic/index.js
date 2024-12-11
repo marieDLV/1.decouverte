@@ -51,7 +51,7 @@ export function useMessagesApi(){
 export function useUsersApi(){
 
     const [users, setUsers] = useState([]);
-    
+    const [history, setHistory] = useState([]);
 
     const getAllUsers = async () => {
     }
