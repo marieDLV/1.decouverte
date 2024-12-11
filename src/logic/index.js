@@ -33,12 +33,17 @@ const ENDPOINT = 'http://localhost:5050';
 const RESOURCE_MESSAGES = `${ENDPOINT}/messages`;
 const RESOURCE_USERS = `${ENDPOINT}/users`;
 
+
+
 export function useMessagesApi(){
 
     const [messages, setMessages] = useState([]);
 
     const getAllMessages = () => {
-        axios.get(RESOURCE_MESSAGES).then( response => setMessages(response.data) )
+        // Promise sans async
+        const promise = axios.get(RESOURCE_MESSAGES)
+        promise.then( response => setMessages(response.data) )
+               .catch( error => console.error(error) );
     }
 
     const sendMessage = async (message) => {
